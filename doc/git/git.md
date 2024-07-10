@@ -105,7 +105,7 @@ Line endings are invisible characters that are present on every file and determi
 An exception is made by generated files from tools such as Doxygen, which are usually `LF` and should remain this way.
 :::
 
-In order to standarize which files have which ending, a `.gitattributes` file should be present in your repository. [Here](https://github.com/NewTec-GmbH/template_python/blob/4d2acf95ab71a20211560b5fe9471267ede13582/.gitattributes) is an example of how a common attributes file looks like for a Python project. You can add or remove lines depending on your use case.
+In order to standarize which files have which ending, a `.gitattributes` file should be present in your repository. [Here](https://github.com/NewTec-GmbH/template_python/blob/main/.gitattributes) is an example of how a common attributes file looks like for a Python project. You can add or remove lines depending on your use case.
 
 ## Integrations
 

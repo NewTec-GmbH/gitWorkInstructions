@@ -4,4 +4,4 @@ Similar to [Continuous Integration](./ci.md), Continuous Deployment is a strateg
 
 ## Github Actions
 
-[GitHub Actions](./ci.md#github-actions) are also used for CD. An example workflow that uses CD can be found in the sources of this documentation, as each time a release is performed, the build and deployment process are done automatically.
+[GitHub Actions](./ci.md#github-actions) are also used for CD. An example workflow that uses CD can be found in the [sources of this documentation](https://github.com/NewTec-GmbH/gitWorkInstructions/blob/main/.github/workflows/documentation.yml), as each time a release is performed, the build and deployment process are done automatically.

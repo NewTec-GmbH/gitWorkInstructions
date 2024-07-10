@@ -91,7 +91,7 @@ To learn more about using Git, you can visit this [cool website](https://learngi
 You do not always want to commit everything on your folder, for example, lots of automatically-generated documentation.
 This is where the `.gitignore` file comes into play.
 
-[Here](https://github.com/NewTec-GmbH/template_python/blob/4d2acf95ab71a20211560b5fe9471267ede13582/.gitignore) is an example of how a common ignore file looks like for a Python project. You can add or remove lines depending on your use case but you generally want to ignore any file or folder that can be generated.
+[Here](https://github.com/NewTec-GmbH/template_python/blob/main/.gitignore) is an example of how a common ignore file looks like for a Python project. You can add or remove lines depending on your use case but you generally want to ignore any file or folder that can be generated.
 
 :::{danger}
 Never commit sensitive data, API keys, credentials, or similar data!

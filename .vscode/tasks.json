@@ -1,0 +1,101 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Python Requirements",
+            "type": "shell",
+            "command": [
+                "pip",
+                "install",
+                "-r",
+                "requirements.txt"
+            ],
+            "group": {
+                "kind": "requirements"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "NPM Requirements",
+            "type": "shell",
+            "command": [
+                "npm",
+                "install"
+            ],
+            "group": {
+                "kind": "requirements"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Install all requirements",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Python Requirements",
+                "NPM Requirements"
+            ],
+            "group": {
+                "kind": "requirements"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": [
+                "sphinx-build",
+                "doc",
+                "_build",
+                "--fail-on-warning"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": [
+                "sphinx-build",
+                "-M",
+                "clean",
+                "doc",
+                "_build"
+            ],
+            "problemMatcher": []
+        }
+        {
+            "label": "Build and open",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Build"
+            ],
+            "command": [
+                "open",
+                "_build/index.html"
+            ],
+            "windows": {
+                "command": [
+                    "start",
+                    "_build/index.html"
+                ]
+            },
+            "group": {
+                "kind": "build"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent"
+            }
+        }
+    ]
+}

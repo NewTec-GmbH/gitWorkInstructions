@@ -18,7 +18,7 @@ jobs:
   # The introduction just shows some useful informations.
   intro:
     # The type of runner that the job will run on.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04.5
     # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
@@ -28,7 +28,7 @@ jobs:
   # The build job will build the documentation.
   build:
     # The type of runner that the job will run on.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04.5
     needs: intro
     permissions:
       contents: write

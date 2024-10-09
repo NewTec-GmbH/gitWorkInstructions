@@ -13,7 +13,7 @@ import platform
 project = "gitWorkInstructions"
 copyright = "2024 - present, NewTec GmbH"
 author = "NewTec GmbH"
-release = "1.0.0"
+release = "1.0.1"
 conf_py_path = "/doc/"  # with leading and trailing slashes
 
 # -- General configuration ---------------------------------------------------
@@ -43,7 +43,8 @@ html_last_updated_fmt = "%b %d, %Y"
 
 html_static_path = ["_static"]
 html_css_files = [
-    "css/svg.css"
+    "css/svg.css",
+    "css/width.css"
 ]
 
 # HTML dark theme options

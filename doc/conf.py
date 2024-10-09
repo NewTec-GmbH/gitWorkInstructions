@@ -43,7 +43,8 @@ html_last_updated_fmt = "%b %d, %Y"
 
 html_static_path = ["_static"]
 html_css_files = [
-    "css/svg.css"
+    "css/svg.css",
+    "css/width.css"
 ]
 
 # HTML dark theme options

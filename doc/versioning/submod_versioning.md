@@ -1,3 +1,10 @@
+<style>
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+</style>
+
 # Software Configuration Management with GIT Submodules
 
 - [Abstract](#abstract)
@@ -301,6 +308,7 @@ differ only in the value of the branch field. This is exactly the
 desired effect of this method. The .gitmodules file together with the
 base component version define and documents the versioning of the entire
 system.
+
 ![image](./images/gitmodules_diffs.png)
 
 ## Git Commands for Different Use Cases
@@ -425,7 +433,7 @@ achieved by using the "--recurse-submodules" option.</p>
 forgotten during clone. This option is primarily a convenience to do
 this automatically:</p>
 <p>$ git submodule init<br>
-Submodule 'subm/a' ((https://bitbucket.org/nhjschulz/subm_a.git) registered for path
+Submodule 'subm/a' (https://bitbucket.org/nhjschulz/subm_a.git) registered for path
 'subm/a'<br>
 Submodule 'subm/b' (https://bitbucket.org/nhjschulz/subm_b.git) registered for path
 'subm/b</p>
@@ -555,7 +563,7 @@ development branch).</td>
 is repeated for all submodules whose branch is to be switched.</td>
 <td>
 
-      $ git submodule set-branch --branch development  subm/a
+      $ git submodule set-branch --branch development subm/a
 </tr>
 <tr class="odd">
 <td>git diff</td>
@@ -566,6 +574,7 @@ submodule has been changed inside .gitmodules.</p>
 Only the entry in the .gitmodules file has been adjusted. The
 submodule versions in the working copy have not (yet) changed.
 ```
+
 </td>
 <td>
 

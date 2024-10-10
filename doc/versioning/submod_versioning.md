@@ -68,7 +68,17 @@ with specific versions. The division of a system into individual
 components is defined at project level. The method only defines an
 abstract component model with three hierarchical levels:
 
-![image](./images/Components.png)
+```{plantuml}
+skinparam linetype ortho
+
+[Base Component] <<repo>> #DarkGray
+[SubSystem] <<repo>> #DarkSeaGreen
+[Component] <<repo>>
+
+[Base Component] -d-> "0..* " [SubSystem] : <<Reference>>
+[Base Component] -d-> "0..*  " [Component] : <<Reference>>
+[SubSystem] -d-> "1..* " [Component] : <<Reference>>
+```
 
 #### Base Component
 

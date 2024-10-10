@@ -21,10 +21,11 @@ conf_py_path = "/doc/"  # with leading and trailing slashes
 
 extensions = [
     "sphinxcontrib.mermaid",  # Mermaid diagrams
-    "myst_parser",  # MyST markdown parser
-    "sphinx_rtd_dark_mode",  # Dark mode
-    "sphinx_copybutton",  # Copy button
-    "sphinx_togglebutton"  # Toggle button
+    "sphinxcontrib.plantuml", # Plantuml diagrams
+    "myst_parser",            # MyST markdown parser
+    "sphinx_rtd_dark_mode",   # Dark mode
+    "sphinx_copybutton",      # Copy button
+    "sphinx_togglebutton"     # Toggle button
 ]
 
 templates_path = ["_templates"]
@@ -59,7 +60,7 @@ if platform.system() == "Windows":
     mermaid_cmd_shell = "true"
 
 # MyST configuration
-myst_enable_extensions = ["colon_fence"]
+myst_enable_extensions = ["colon_fence", 'attrs_block']
 myst_heading_anchors = 2
 
 # Toggle button configuration

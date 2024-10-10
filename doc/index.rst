@@ -71,7 +71,7 @@ This documentation is intended to introduce the overall branching strategy to be
       merge release/v3.0.x tag: "v3.0.0"
 
 .. toctree::
-   :caption: Submodule Based Configuration Managment:
+   :caption: Submodule Config Management:
    :maxdepth: 2
 
    versioning/submod_versioning.md

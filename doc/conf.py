@@ -13,7 +13,7 @@ import platform
 project = "gitWorkInstructions"
 copyright = "2024 - present, NewTec GmbH"
 author = "NewTec GmbH"
-release = "1.0.0"
+release = "1.1.0"
 conf_py_path = "/doc/"  # with leading and trailing slashes
 
 # -- General configuration ---------------------------------------------------
@@ -21,10 +21,11 @@ conf_py_path = "/doc/"  # with leading and trailing slashes
 
 extensions = [
     "sphinxcontrib.mermaid",  # Mermaid diagrams
-    "myst_parser",  # MyST markdown parser
-    "sphinx_rtd_dark_mode",  # Dark mode
-    "sphinx_copybutton",  # Copy button
-    "sphinx_togglebutton"  # Toggle button
+    "sphinxcontrib.plantuml", # Plantuml diagrams
+    "myst_parser",            # MyST markdown parser
+    "sphinx_rtd_dark_mode",   # Dark mode
+    "sphinx_copybutton",      # Copy button
+    "sphinx_togglebutton"     # Toggle button
 ]
 
 templates_path = ["_templates"]
@@ -43,7 +44,8 @@ html_last_updated_fmt = "%b %d, %Y"
 
 html_static_path = ["_static"]
 html_css_files = [
-    "css/svg.css"
+    "css/svg.css",
+    "css/width.css"
 ]
 
 # HTML dark theme options
@@ -58,7 +60,7 @@ if platform.system() == "Windows":
     mermaid_cmd_shell = "true"
 
 # MyST configuration
-myst_enable_extensions = ["colon_fence"]
+myst_enable_extensions = ["colon_fence", 'attrs_block']
 myst_heading_anchors = 2
 
 # Toggle button configuration

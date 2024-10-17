@@ -13,7 +13,7 @@ import platform
 project = "gitWorkInstructions"
 copyright = "2024 - present, NewTec GmbH"
 author = "NewTec GmbH"
-release = "1.0.1"
+release = "1.1.0"
 conf_py_path = "/doc/"  # with leading and trailing slashes
 
 # -- General configuration ---------------------------------------------------

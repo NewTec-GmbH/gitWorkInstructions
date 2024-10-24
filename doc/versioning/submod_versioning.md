@@ -18,7 +18,7 @@ table, th, td {
 
 The goal of configuration management is to manage and maintain all
 components used for the creation of a software system, so that all
-users of this software work with defined versions.  
+users of this software work with defined versions.
 This article describes a method using the GIT version control system and
 submodules to implement detailed versioning of software based system.
 The basic idea of this method is to divide a software system into
@@ -46,7 +46,7 @@ in .gitmodules looks like this:
 ![image](./images/gitmodule_entry.png)
 
 Each used submodule is defined by such a section within the
-.gitmodules file.  
+.gitmodules file.
 The "submodule" line holds the name of the submodule. By default it is
 the same as the path entry, but can be customized (--name option for
 submodule add). The entries for "path" and "url" are always present,
@@ -260,7 +260,7 @@ remotes/origin/release/v0.1.0
 Important is the use of the "--recurse-submodules" option for the clone command.
 The submodules will not be loaded in the context of cloning without this
 option. But they can still be loaded later on using additional GIT
-commands.  
+commands.
 In addition to the "main" branch, the repository also contains release
 branches and a "development" branch.
 
@@ -632,7 +632,7 @@ all changed submodule folders must be checked in.</td>
     $ git status
     On branch main
     Your branch is up to date with 'origin/main'.
-    
+
     Changes not staged for commit:
     (use "git add <file>..." to update what will be committed)
     (use "git restore <file>..." to discard changes in working directory)
@@ -717,12 +717,12 @@ for it in the next step.
     $ git status
     HEAD detached at c776b6f
     nothing to commit, working tree clean
-    
+
     $ git log c776b6f -n 1
     commit c776b6f3ae2e58de0b1dd05302b48004b23492c5 (HEAD, tag: V0.1.0,origin/release/v0.1.0, release/v0.1.0)
     Author: Norbert Schulz &lt;github@schulznorbert.de
     Date:   Mon Sep 30 16:23:33 2024 +0200
-    
+
         Update 8 on dev branch
 </tr>
 <tr class="even">
@@ -733,7 +733,7 @@ pulling of changes is possible after this step.</td>
 
     $ git checkout -b feature/new V0.1.0
     Switched to a new branch 'feature/new'
-    
+
     $ git status
     On branch feature/new
     nothing to commit, working tree clean
@@ -764,22 +764,22 @@ The changes inside the submodule have impact on the base repository as well.
 A "git status" in the base repository returns the following:
 
 ```bash
-$ git status  
-On branch release/v0.1.0  
+$ git status
+On branch release/v0.1.0
 Your branch is up to date with 'origin/release/v0.1.0'.
 
-Changes not staged for commit:  
-  (use "git add \<file\>..." to update what will be committed)  
+Changes not staged for commit:
+  (use "git add \<file\>..." to update what will be committed)
   (use "git restore \<file\>..." to discard changes in working
-directory)  
+directory)
         modified:   subm/a (new commits)
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 The base repository has detected that we are now on a different commit
-in the modified submodule. If you want to share the new variant, **you
-should not check in and push the changed folder** **now**. This will
+in the modified submodule. If you want to share the new variant,
+**you should not check in and push the changed folder** **now**. This will
 create a contradiction between .gitmodules and the index commit link.
 The previous version branch is still listed in .gitmodules, but the
 commit hash in the submodule is the HEAD of the new branch. Possible
@@ -791,7 +791,7 @@ options to handle this situation are:
   developers.
 * Create a new version of the submodule for integration and discard the
   local changes with "git submodule update --init --remote --recursive".
-  A integrator then later generates an update of the base repository
+  An integrator then later generates an update of the base repository
   that targets the new version of the submodule.
 
 #### Creating a Submodule Version
@@ -950,7 +950,7 @@ example, the version of the subm/a component has been increased</td>
 </td>
 </tr>
 <tr class="odd">
-<td>$ git submodule update --init --remote --recursive</td>
+<td>git submodule update --init --remote --recursive</td>
 <td><p>The working copy of the integration branch is updated to the new
 component version. The "git status" shows the changes in the submodules
 (only subm/a" has changed here).</p>
@@ -960,7 +960,7 @@ check it in if successful.</p></td>
 
     $ git submodule update --init --remote --recursive
     Submodule path 'subm/a': checked out '382a28f0d54609483a6843c5f13d879868b7b809'
-    
+
     $ git status
     On branch integration
     Changes not staged for commit:
@@ -983,7 +983,7 @@ can be created right away for testers to work with.</td>
     $ git commit -a -m "Preparing Release v2.0.0"
     [integration 3b811e2] Preparing Release v2.0.0
     2 files changed, 2 insertions(+), 2 deletions(-)
-    
+
     $ git push
     Enumerating objects: 7, done.
     Counting objects: 100% (7/7), done.
@@ -1003,7 +1003,7 @@ component is not included in .submodules.</td>
 <td>
 
     $ git tag -m "Created version V2.0.0" V2.0.0
-    
+
     $ git push origin tag V2.0.0
      * [new tag]         V2.0.0 -> V2.0.0
 </td>
@@ -1016,7 +1016,7 @@ component is not included in .submodules.</td>
 <td>
 
     $ git branch release/v2.0.0 V2.0.0
-    
+
     $ git push --set-upstream origin release/v2.0.0:release/v2.0.0
     * [new branch]      release/v2.0.0 ->; release/v2.0.0
     branch 'release/v2.0.0' set up to track 'origin/release/v2.0.0'.

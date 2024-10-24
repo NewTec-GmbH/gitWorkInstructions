@@ -247,7 +247,8 @@ Cloning into 'base'...
 <..>
 Submodule path 'subm/a': checked out 'c776b6f3ae2e58de0b1dd05302b48004b23492c5'
 Submodule path 'subm/b': checked out 'ee28a60fabf10470991d83615021650987885c71'
-$ cd base$ git branch -a
+$ cd base
+$ git branch -a
 * main
 remotes/origin/HEAD -> origin/main
 remotes/origin/development

@@ -440,7 +440,7 @@ the .gitmodules file was created or extended.</td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>git clone &lt;url&gt;--recurse-submodules</td>
+<td>git clone &lt;url&gt; &nbsp; --recurse-submodules</td>
 <td><p>Initial cloning of a repository including all submodules. This is
 achieved by using the "--recurse-submodules" option.</p>
 

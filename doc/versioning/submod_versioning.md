@@ -545,7 +545,7 @@ If new entries appear in .gitmodules with the pull, they will not be processed a
 the sequence of pull and "submodule update".
 
 
-
+(changing-a-submodule-branch)=
 #### Changing a Submodule Branch
 
 This scenario describes the change of a submodule to another existing

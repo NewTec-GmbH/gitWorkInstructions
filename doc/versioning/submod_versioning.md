@@ -544,7 +544,7 @@ If new entries appear in .gitmodules with the pull, they will not be processed a
 "submodule update" will still be necessary. It is currently more safe to go with
 the sequence of pull and "submodule update".
 
-(Changing a Submodule Branch)=
+(changing-a-submodule-branch)=
 
 #### Changing a Submodule Branch
 

@@ -545,7 +545,7 @@ If new entries appear in .gitmodules with the pull, they will not be processed a
 the sequence of pull and "submodule update".
 
 
-(changing-a-submodule-branch)=
+(Changing a Submodule Branch)= <!-- !!! keep this link anchor, because referenced later !!! -->
 #### Changing a Submodule Branch
 
 This scenario describes the change of a submodule to another existing
@@ -902,6 +902,7 @@ name will be the new branch in the "upstream" repository.</td>
 To use the new version in the base repository, use the commands
 from [Changing a Submodule Branch](#changing-a-submodule-branch) and use
 the new branch name there.
+
 
 #### Creating a New System Version
 

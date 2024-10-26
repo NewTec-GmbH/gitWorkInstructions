@@ -5,7 +5,7 @@ table, th, td {
 }
 </style>
 
-# Software Configuration Management with GIT Submodules
+# Software Configuration Management with Git Submodules
 
 * [Abstract](#abstract)
 * [Used Terminology](#used-terminology)
@@ -18,8 +18,8 @@ table, th, td {
 
 The goal of configuration management is to manage and maintain all
 components used for the creation of a software system, so that all
-users of this software work with defined versions.  
-This article describes a method using the GIT version control system and
+users of this software work with defined versions.
+This article describes a method using the Git version control system and
 submodules to implement detailed versioning of software based system.
 The basic idea of this method is to divide a software system into
 components that are individually versioned. It is suitable for projects
@@ -34,19 +34,19 @@ configuration should remain simple to change and document.
 A repository in this method is a "standard" Git repository.
 All items stored inside such a repository share the version history and
 are versioned together "as a whole". This means that each component with
-individual versioning needs its own GIT repository.
+individual versioning needs its own Git repository.
 
 ### Reference
 
-A reference  is a GIT submodule definition to a commit
-inside another GIT repository. These are managed with GIT commands or
+A reference  is a Git submodule definition to a commit
+inside another Git repository. These are managed with Git commands or
 manual editing of the .gitmodules file. The anatomy of such a reference
 in .gitmodules looks like this:
 
 ![image](./images/gitmodule_entry.png)
 
 Each used submodule is defined by such a section within the
-.gitmodules file.  
+.gitmodules file.
 The "submodule" line holds the name of the submodule. By default it is
 the same as the path entry, but can be customized (--name option for
 submodule add). The entries for "path" and "url" are always present,
@@ -65,7 +65,7 @@ branch is optional.
 
 A component is defined as a part of a system that can be versioned
 individually. A complete system is created by assembling all components
-with specific versions. The division of a system into individual
+with specific versions. The division of a system into individual
 components is defined at project level. The method only defines an
 abstract component model with three hierarchical levels:
 
@@ -84,7 +84,7 @@ skinparam linetype ortho
 #### Base Component
 
 A "Base" component represents the complete system as a top-level
-element.  It defines the complete system as a composition based on
+element. It defines the complete system as a composition based on
 references to other components. Creating a working copy of the system
 always starts with this component. Most project use exactly one base
 component. Multiple base components can be useful, if a project contains
@@ -99,7 +99,7 @@ independent sub-projects. A base component consists of
 #### Subsystem Component
 
 A "subsystem" component is a composition of components similar to a base
-component.  It supports the creation of versioned subsystems, which in
+component. It supports the creation of versioned subsystems, which in
 turn consist of components. An example of such a subsystem component is
 a communication stack that is composed of services, protocols and device
 drivers. The use of subsystems must be decided at the project level.
@@ -120,28 +120,28 @@ components.
 
 ### Introduction
 
-This configuration method is based on the GIT Submodule functionality
-for the recursive composition of GIT repositories. This functionality is
+This configuration method is based on the Git Submodule functionality
+for the recursive composition of Git repositories. This functionality is
 applied 1:1 to the composition of components via references. There is no
-separate tooling required. Any GIT tutorial can be used to get a basic
-understanding of the GIT submodules (Example:
+separate tooling required. Any Git tutorial can be used to get a basic
+understanding of the Git submodules (Example:
 [https://git-scm.com/book/en/v2/Git-Tools-Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)).
-A disadvantage of GIT submodules is the need to deal with additional GIT
+A disadvantage of Git submodules is the need to deal with additional Git
 commands or options for standard operations such as "clone" and
 "checkout" of branches (e.g. "git checkout development
-**--recurse-submodules** "). But this is defined by GIT and not caused
+**--recurse-submodules** "). But this is defined by Git and not caused
 by this methodology.
 
 ### Complexity of Submodule Versioning
 
-GIT manages submodules in two distinct places within a repository:
+Git manages submodules in two distinct places within a repository:
 
 * Via the .gitmodules file in the root directory of a repository
 * Within the repository index under .git/modules and in .git/config.
 
 The settings in the .gitmodules file are under version control and
 visible to a user in the working copy. But sadly this file is primarily
-used to register submodules (URL + checkout path). The effectively used
+used to register submodules (URL + checkout path). The effectively used
 version is a reference to a commit id of the submodule, which is stored
 in the index and not in the .gitmodules file. This leads to the
 following problems:
@@ -150,12 +150,12 @@ following problems:
   information about a submodule configuration.
 * It is not possible to specify the commit id via a tag within the
   .gitmodules file.
-* The GIT submodule commands only show commit hashes. Used labels and
+* The Git submodule commands only show commit hashes. Used labels and
   branches must be determined via additional detours.
 
 This complicates both the configuration and the documentation of the
 used versions for a complete system. Ideally this should be visible
-from a central location, e.g. within the .gitmodules files.
+from a central location, e.g. within the .gitmodules files.
 Unfortunately tags are not supported there to request defined
 versions of submodules. An alternative to the missing tags support is
 possible via branches by using the optional "branch" entry. This avoids
@@ -175,7 +175,7 @@ entries in .gitmodules. This restriction has the following benefits:
 * The component configuration is documented and easily readable by
   everyone when checking out a configuration.
 * The configuration documentation is ensured to be correct as it is also
-  read and used by the GIT operations.
+  read and used by the Git operations.
 * The workflows for creating development and release versions are the
   same.
 
@@ -193,15 +193,15 @@ repository.
 
 The used version of a component is typically marked by a tag. A tag is
 hardwired to a commit, which then reliably represents the desired
-state of this version. GIT unfortunately only supports branches and no
+state of this version. Git unfortunately only supports branches and no
 tags within the .gitmodules file. This method therefore uses branches as
-an alternative to the tag in versioning. GIT then follows ("tracks")
+an alternative to the tag in versioning. Git then follows ("tracks")
 this branch, which means that the submodule commit of the branch HEAD
 will get used. This leads to an obvious problem compared to tags usage.
 Pushes to a branch change its HEAD and as such leave the originally
-versioned commit. This problem can be mitigated as follows.
+versioned commit. This problem can be mitigated as follows.
 
-* GIT repository hosting environments like Github or BitBucket support
+* Git repository hosting environments like Github or BitBucket support
   rights management for branches. It is possible to prohibit the
   modification of certain branches or restrict them to privileged users.
   A branch behaves then logically in the same way as a tag. It always
@@ -247,7 +247,8 @@ Cloning into 'base'...
 <..>
 Submodule path 'subm/a': checked out 'c776b6f3ae2e58de0b1dd05302b48004b23492c5'
 Submodule path 'subm/b': checked out 'ee28a60fabf10470991d83615021650987885c71'
-$ cd base$ git branch -a
+$ cd base
+$ git branch -a
 * main
 remotes/origin/HEAD -> origin/main
 remotes/origin/development
@@ -258,8 +259,8 @@ remotes/origin/release/v0.1.0
 
 Important is the use of the "--recurse-submodules" option for the clone command.
 The submodules will not be loaded in the context of cloning without this
-option. But they can still be loaded later on using additional GIT
-commands.  
+option. But they can still be loaded later on using additional Git
+commands.
 In addition to the "main" branch, the repository also contains release
 branches and a "development" branch.
 
@@ -327,7 +328,7 @@ system.
 
 ## Git Commands for Different Use Cases
 
-This section shows GIT command examples for various versioning use
+This section shows Git command examples for various versioning use
 cases. In many cases, there are alternative commands that lead to same
 results. The commands shown here are considered examples to get started
 using submodule versioning. Advanced users may follow other routes or
@@ -357,13 +358,17 @@ Otherwise the base component folder will be used.
 <td>
 
     $ mkdir basis
+
+</td>
 </tr>
 <tr class="even">
 <td>cd <em>&lt;name&gt;</em></td>
-<td>Switching into the base component repository.</td>
+<td>Switching into the base component repository. </td>
 <td>
 
-    $ cd basis</td>
+    $ cd basis
+
+</td>
 </tr>
 <tr class="odd">
 <td>git init</td>
@@ -373,10 +378,11 @@ Otherwise the base component folder will be used.
     $ git init
     Initialized empty Git repository in
     /home/norbert/basis/.git/
+
 </td>
 </tr>
 <tr class="even">
-<td>git submodule add &lt;repo&gt; &lt;path&gt;</td>
+<td>git submodule add &lt;repo_url&gt; &lt;local_relative_path&gt;</td>
 <td>Adding submodules. This command is repeated for each submodule.</td>
 <td>
 
@@ -439,7 +445,7 @@ the .gitmodules file was created or extended.</td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>git clone &lt;url&gt;--recurse-submodules</td>
+<td>git clone &lt;url&gt; &nbsp; --recurse-submodules</td>
 <td><p>Initial cloning of a repository including all submodules. This is
 achieved by using the "--recurse-submodules" option.</p>
 
@@ -509,7 +515,7 @@ Submodule path 'subm/b':checked out 'ee28a60fabf10470991d83615021650987885c71'</
 <tr class="odd">
 <td>git pull</td>
 <td>The base repository is updated by a pull. It updates the base
-component  working copy, but does not touch the submodules yet.</td>
+component working copy, but does not touch the submodules yet.</td>
 <td>
 
     $ git pull
@@ -531,9 +537,12 @@ defined by the .gitmodules file.</td>
 </tbody>
 </table>
 
-```{note}
-Git pull also offers a "--recurse-submodules" option, which automatically adjusts the submodules as well. However, this only works with already known submodules. If new entries appear in .gitmodules with the pull, they will not be processed and a "submodule update" will still be necessary. It is currently more safe to go with the sequence of pull and "submodule update". |
-```
+
+Git pull also offers a "--recurse-submodules" option, which automatically adjusts the submodules as well.
+However, this only works with already known submodules.
+If new entries appear in .gitmodules with the pull, they will not be processed and a
+"submodule update" will still be necessary. It is currently more safe to go with
+the sequence of pull and "submodule update".
 
 (changing-a-submodule-branch)=
 
@@ -587,8 +596,8 @@ is repeated for all submodules whose branch is to be switched.</td>
 submodule has been changed inside .gitmodules.</p>
 
 ```{note}
-Only the entry in the .gitmodules file has been adjusted. The
-submodule versions in the working copy have not (yet) changed.
+Only the entry in the .gitmodules file has been adjusted.
+The submodule versions in the working copy have not (yet) changed.
 ```
 
 </td>
@@ -614,7 +623,7 @@ submodule versions in the working copy have not (yet) changed.
 <td>Apply the changes in .gitmodules to the submodules. This sets the
 commit reference in the index to the HEAD of the branch and checks it
 out. The "--remote" causes changes from the upstream submodule repository
-to be fetched  first, and then switch to the HEAD of the branches.</td>
+to be fetched first, and then switch to the HEAD of the branches.</td>
 <td>
 
     $ git submodule update --recursive --remote
@@ -631,7 +640,7 @@ all changed submodule folders must be checked in.</td>
     $ git status
     On branch main
     Your branch is up to date with 'origin/main'.
-    
+
     Changes not staged for commit:
     (use "git add <file>..." to update what will be committed)
     (use "git restore <file>..." to discard changes in working directory)
@@ -654,20 +663,20 @@ all changed submodule folders must be checked in.</td>
 
 ### Working on a Submodule Patch
 
-A GIT submodule is a normal GIT repository. It is only located within a
+A Git submodule is a normal Git repository. It is only located within a
 base repository, which monitors it for modifications. If you switch into
-a submodule directory, all GIT commands for managing the submodule
+a submodule directory, all Git commands for managing the submodule
 repository are available. A special situation arises here, as submodules
 are set to a specific commit during update/checkout from the base
-repository. GIT calls this “detached HEAD” as there is no branch
+repository. Git calls this “detached HEAD” as there is no branch
 context. To work in a submodule, it needs first to be switched back to a
 branch. Unfortunately, the "branch" specification of the .gitmodules
-file does not also cause this branch to be set.  Only the HEAD commit of
+file does not also cause this branch to be set. Only the HEAD commit of
 the branch got checked out. You are on the same commit as the branch
 HEAD, but still "detached" from branches.
 
 The following scenario assumes strict version control at the component
-level.  This means that all components are set to released versions and
+level. This means that all components are set to released versions and
 you have a defined configuration at the beginning. A component
 (submodule) is now to be extended from this state.
 
@@ -716,12 +725,12 @@ for it in the next step.
     $ git status
     HEAD detached at c776b6f
     nothing to commit, working tree clean
-    
+
     $ git log c776b6f -n 1
     commit c776b6f3ae2e58de0b1dd05302b48004b23492c5 (HEAD, tag: V0.1.0,origin/release/v0.1.0, release/v0.1.0)
-    Author: Norbert Schulz &lt;github@schulznorbert.de
+    Author: Norbert Schulz <github@schulznorbert.de>
     Date:   Mon Sep 30 16:23:33 2024 +0200
-    
+
         Update 8 on dev branch
 </tr>
 <tr class="even">
@@ -732,7 +741,7 @@ pulling of changes is possible after this step.</td>
 
     $ git checkout -b feature/new V0.1.0
     Switched to a new branch 'feature/new'
-    
+
     $ git status
     On branch feature/new
     nothing to commit, working tree clean
@@ -743,7 +752,7 @@ pulling of changes is possible after this step.</td>
 <td>"Featue New" gets implemented here.</td>
 <td>
 
-    $ echo "Feature/new is here" &gt; README.md (http://README.md)
+    $ echo "Feature/new is here" > README.md
 </td>
 </tr>
 <tr class="even">
@@ -763,34 +772,34 @@ The changes inside the submodule have impact on the base repository as well.
 A "git status" in the base repository returns the following:
 
 ```bash
-$ git status  
-On branch release/v0.1.0  
+$ git status
+On branch release/v0.1.0
 Your branch is up to date with 'origin/release/v0.1.0'.
 
-Changes not staged for commit:  
-  (use "git add \<file\>..." to update what will be committed)  
-  (use "git restore \<file\>..." to discard changes in working
-directory)  
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working
+directory)
         modified:   subm/a (new commits)
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 The base repository has detected that we are now on a different commit
-in the modified submodule. If you want to share the new variant, **you
-should not check in and push the changed folder** **now**. This will
+in the modified submodule. If you want to share the new variant,
+**you should not check in and push the changed folder** **now**. This will
 create a contradiction between .gitmodules and the index commit link.
 The previous version branch is still listed in .gitmodules, but the
 commit hash in the submodule is the HEAD of the new branch. Possible
 options to handle this situation are:
 
 * Create a development branch in the base module and update the feature
-  branch of the submodule inside .gitmodules and push. This creates a
+  branch of the submodule inside .gitmodules and push. This creates a
   "tracking development branch" that can be shared with other
   developers.
 * Create a new version of the submodule for integration and discard the
   local changes with "git submodule update --init --remote --recursive".
-  A integrator then later generates an update of the base repository
+  An integrator then later generates an update of the base repository
   that targets the new version of the submodule.
 
 #### Creating a Submodule Version
@@ -827,13 +836,13 @@ hashes are also known in the local repository.</td>
     $ git fetch
     $ git log
     commit 382a28f0d54609483a6843c5f13d879868b7b809 (HEAD, origin/development)
-    Author: Norbert Schulz <github@schulznorbert.de (http://schulznorbert.de)>
+    Author: Norbert Schulz <github@schulznorbert.de>
     Date:   Mon Sep 30 16:23:33 2024 +0200
 
         Update 10 on dev branch
 
     commit 7f80e15fb9fdddbce08a4107082ecd6c49061bb1
-    Author: Norbert Schulz <github@schulznorbert.de (http://schulznorbert.de)>
+    Author: Norbert Schulz <github@schulznorbert.de>
     Date:   Mon Sep 30 16:23:33 2024 +0200
 
         Update 9 on dev branch
@@ -891,14 +900,15 @@ name will be the new branch in the "upstream" repository.</td>
 </table>
 
 To use the new version in the base repository, use the commands
-from [Changing a Submodule Branch](#changing-a-submodule-branch) and use
+from [Changing a Submodule Branch](#changing-a-submodule-branch) and use
 the new branch name there.
+
 
 #### Creating a New System Version
 
 Creating a complete system version starts by creating a new version for
 the base component. In this new version, the .gitmodules file will be
-edited to update the references to new versions  (=branches) of the
+edited to update the references to new versions (=branches) of the
 submodule components. The new versions for the submodules must already
 be available before the update of the base component.
 
@@ -917,7 +927,7 @@ be available before the update of the base component.
 </thead>
 <tbody>
 <tr class="odd">
-<td>git checkout &lt;Integrations Branch&gt;</td>
+<td>git checkout &lt;Integration_Branch&gt;</td>
 <td>In the base repository, the integration branch is checked out.</td>
 <td>
 
@@ -949,7 +959,7 @@ example, the version of the subm/a component has been increased</td>
 </td>
 </tr>
 <tr class="odd">
-<td>$ git submodule update --init --remote --recursive</td>
+<td>git submodule update --init --remote --recursive</td>
 <td><p>The working copy of the integration branch is updated to the new
 component version. The "git status" shows the changes in the submodules
 (only subm/a" has changed here).</p>
@@ -959,7 +969,7 @@ check it in if successful.</p></td>
 
     $ git submodule update --init --remote --recursive
     Submodule path 'subm/a': checked out '382a28f0d54609483a6843c5f13d879868b7b809'
-    
+
     $ git status
     On branch integration
     Changes not staged for commit:
@@ -982,7 +992,7 @@ can be created right away for testers to work with.</td>
     $ git commit -a -m "Preparing Release v2.0.0"
     [integration 3b811e2] Preparing Release v2.0.0
     2 files changed, 2 insertions(+), 2 deletions(-)
-    
+
     $ git push
     Enumerating objects: 7, done.
     Counting objects: 100% (7/7), done.
@@ -1002,7 +1012,7 @@ component is not included in .submodules.</td>
 <td>
 
     $ git tag -m "Created version V2.0.0" V2.0.0
-    
+
     $ git push origin tag V2.0.0
      * [new tag]         V2.0.0 -> V2.0.0
 </td>
@@ -1015,7 +1025,7 @@ component is not included in .submodules.</td>
 <td>
 
     $ git branch release/v2.0.0 V2.0.0
-    
+
     $ git push --set-upstream origin release/v2.0.0:release/v2.0.0
     * [new branch]      release/v2.0.0 ->; release/v2.0.0
     branch 'release/v2.0.0' set up to track 'origin/release/v2.0.0'.

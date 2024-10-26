@@ -5,7 +5,7 @@ table, th, td {
 }
 </style>
 
-# Software Configuration Management with GIT Submodules
+# Software Configuration Management with Git Submodules
 
 * [Abstract](#abstract)
 * [Used Terminology](#used-terminology)
@@ -19,7 +19,7 @@ table, th, td {
 The goal of configuration management is to manage and maintain all
 components used for the creation of a software system, so that all
 users of this software work with defined versions.
-This article describes a method using the GIT version control system and
+This article describes a method using the Git version control system and
 submodules to implement detailed versioning of software based system.
 The basic idea of this method is to divide a software system into
 components that are individually versioned. It is suitable for projects
@@ -34,12 +34,12 @@ configuration should remain simple to change and document.
 A repository in this method is a "standard" Git repository.
 All items stored inside such a repository share the version history and
 are versioned together "as a whole". This means that each component with
-individual versioning needs its own GIT repository.
+individual versioning needs its own Git repository.
 
 ### Reference
 
-A reference  is a GIT submodule definition to a commit
-inside another GIT repository. These are managed with GIT commands or
+A reference  is a Git submodule definition to a commit
+inside another Git repository. These are managed with Git commands or
 manual editing of the .gitmodules file. The anatomy of such a reference
 in .gitmodules looks like this:
 
@@ -120,21 +120,21 @@ components.
 
 ### Introduction
 
-This configuration method is based on the GIT Submodule functionality
-for the recursive composition of GIT repositories. This functionality is
+This configuration method is based on the Git Submodule functionality
+for the recursive composition of Git repositories. This functionality is
 applied 1:1 to the composition of components via references. There is no
-separate tooling required. Any GIT tutorial can be used to get a basic
-understanding of the GIT submodules (Example:
+separate tooling required. Any Git tutorial can be used to get a basic
+understanding of the Git submodules (Example:
 [https://git-scm.com/book/en/v2/Git-Tools-Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)).
-A disadvantage of GIT submodules is the need to deal with additional GIT
+A disadvantage of Git submodules is the need to deal with additional Git
 commands or options for standard operations such as "clone" and
 "checkout" of branches (e.g. "git checkout development
-**--recurse-submodules** "). But this is defined by GIT and not caused
+**--recurse-submodules** "). But this is defined by Git and not caused
 by this methodology.
 
 ### Complexity of Submodule Versioning
 
-GIT manages submodules in two distinct places within a repository:
+Git manages submodules in two distinct places within a repository:
 
 * Via the .gitmodules file in the root directory of a repository
 * Within the repository index under .git/modules and in .git/config.
@@ -150,7 +150,7 @@ following problems:
   information about a submodule configuration.
 * It is not possible to specify the commit id via a tag within the
   .gitmodules file.
-* The GIT submodule commands only show commit hashes. Used labels and
+* The Git submodule commands only show commit hashes. Used labels and
   branches must be determined via additional detours.
 
 This complicates both the configuration and the documentation of the
@@ -175,7 +175,7 @@ entries in .gitmodules. This restriction has the following benefits:
 * The component configuration is documented and easily readable by
   everyone when checking out a configuration.
 * The configuration documentation is ensured to be correct as it is also
-  read and used by the GIT operations.
+  read and used by the Git operations.
 * The workflows for creating development and release versions are the
   same.
 
@@ -193,15 +193,15 @@ repository.
 
 The used version of a component is typically marked by a tag. A tag is
 hardwired to a commit, which then reliably represents the desired
-state of this version. GIT unfortunately only supports branches and no
+state of this version. Git unfortunately only supports branches and no
 tags within the .gitmodules file. This method therefore uses branches as
-an alternative to the tag in versioning. GIT then follows ("tracks")
+an alternative to the tag in versioning. Git then follows ("tracks")
 this branch, which means that the submodule commit of the branch HEAD
 will get used. This leads to an obvious problem compared to tags usage.
 Pushes to a branch change its HEAD and as such leave the originally
 versioned commit. This problem can be mitigated as follows.
 
-* GIT repository hosting environments like Github or BitBucket support
+* Git repository hosting environments like Github or BitBucket support
   rights management for branches. It is possible to prohibit the
   modification of certain branches or restrict them to privileged users.
   A branch behaves then logically in the same way as a tag. It always
@@ -259,7 +259,7 @@ remotes/origin/release/v0.1.0
 
 Important is the use of the "--recurse-submodules" option for the clone command.
 The submodules will not be loaded in the context of cloning without this
-option. But they can still be loaded later on using additional GIT
+option. But they can still be loaded later on using additional Git
 commands.
 In addition to the "main" branch, the repository also contains release
 branches and a "development" branch.
@@ -328,7 +328,7 @@ system.
 
 ## Git Commands for Different Use Cases
 
-This section shows GIT command examples for various versioning use
+This section shows Git command examples for various versioning use
 cases. In many cases, there are alternative commands that lead to same
 results. The commands shown here are considered examples to get started
 using submodule versioning. Advanced users may follow other routes or
@@ -663,12 +663,12 @@ all changed submodule folders must be checked in.</td>
 
 ### Working on a Submodule Patch
 
-A GIT submodule is a normal GIT repository. It is only located within a
+A Git submodule is a normal Git repository. It is only located within a
 base repository, which monitors it for modifications. If you switch into
-a submodule directory, all GIT commands for managing the submodule
+a submodule directory, all Git commands for managing the submodule
 repository are available. A special situation arises here, as submodules
 are set to a specific commit during update/checkout from the base
-repository. GIT calls this “detached HEAD” as there is no branch
+repository. Git calls this “detached HEAD” as there is no branch
 context. To work in a submodule, it needs first to be switched back to a
 branch. Unfortunately, the "branch" specification of the .gitmodules
 file does not also cause this branch to be set. Only the HEAD commit of

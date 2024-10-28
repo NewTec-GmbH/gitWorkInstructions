@@ -14,6 +14,7 @@ project = "gitWorkInstructions"
 copyright = "2024 - present, NewTec GmbH"
 author = "NewTec GmbH"
 release = "1.1.0"
+version = release       # Do not differenciate between release and version
 conf_py_path = "/doc/"  # with leading and trailing slashes
 
 # -- General configuration ---------------------------------------------------

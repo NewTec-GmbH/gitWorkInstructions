@@ -20,6 +20,23 @@ This is the documentation for the NewTec Git Work Instructions. You can find the
 5. Build the documentation: `sphinx-build doc _build --fail-on-warning`
 6. Open the documentation: `_build/index.html`
 
+### Visual Studio Code Tasks
+
+If you are using VSCode, the commands mentioned above are packed into tasks, making it easier for the developer to use.
+
+1. Clone the repository: `git clone https://github.com/NewTec-GmbH/gitWorkInstructions.git`
+2. Open the folder with VSCode: `code ./gitWorkInstructions`
+3. On the top menu, choose `Terminal` -> `Run Task...` and select the task you require.
+
+#### Available Tasks
+
+* Install Python Requirements
+* Install NPM Requirements
+* Install all requirements
+* Build
+* Clean
+* Build and open
+
 ## Used Libraries
 
 Used 3rd party libraries which are not part of the standard Python package:

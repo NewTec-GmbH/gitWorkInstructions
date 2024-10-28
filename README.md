@@ -4,6 +4,39 @@
 
 This is the documentation for the NewTec Git Work Instructions. You can find the resulting GitHub Pages in [here](https://newtec-gmbh.github.io/gitWorkInstructions/).
 
+## Build the documentation
+
+### Requirements
+
+* Node 20
+* Python 3.11
+
+### Instructions
+
+1. Clone the repository: `git clone https://github.com/NewTec-GmbH/gitWorkInstructions.git`
+2. Change directory: `cd gitWorkInstructions`
+3. Install Python dependencies: `pip install -r requirements.txt`
+4. Install Node dependencies: `npm install`
+5. Build the documentation: `sphinx-build doc _build --fail-on-warning`
+6. Open the documentation: `_build/index.html`
+
+### Visual Studio Code Tasks
+
+If you are using VSCode, the commands mentioned above are packed into tasks, making it easier for the developer to use.
+
+1. Clone the repository: `git clone https://github.com/NewTec-GmbH/gitWorkInstructions.git`
+2. Open the folder with VSCode: `code ./gitWorkInstructions`
+3. On the top menu, choose `Terminal` -> `Run Task...` and select the task you require.
+
+#### Available Tasks
+
+* Install Python Requirements
+* Install NPM Requirements
+* Install all requirements
+* Build
+* Clean
+* Build and open
+
 ## Used Libraries
 
 Used 3rd party libraries which are not part of the standard Python package:

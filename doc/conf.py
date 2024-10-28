@@ -21,12 +21,12 @@ conf_py_path = "/doc/"  # with leading and trailing slashes
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    "sphinxcontrib.mermaid",  # Mermaid diagrams
-    "sphinxcontrib.plantuml", # Plantuml diagrams
-    "myst_parser",            # MyST markdown parser
-    "sphinx_rtd_dark_mode",   # Dark mode
-    "sphinx_copybutton",      # Copy button
-    "sphinx_togglebutton"     # Toggle button
+    "sphinxcontrib.mermaid",   # Mermaid diagrams
+    "sphinxcontrib.plantuml",  # Plantuml diagrams
+    "myst_parser",             # MyST markdown parser
+    "sphinx_rtd_dark_mode",    # Dark mode
+    "sphinx_copybutton",       # Copy button
+    "sphinx_togglebutton"      # Toggle button
 ]
 
 templates_path = ["_templates"]

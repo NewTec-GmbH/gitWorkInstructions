@@ -42,6 +42,9 @@ exclude_patterns = [
 # HTML theme and static files
 html_theme = "sphinx_rtd_theme"
 html_last_updated_fmt = "%b %d, %Y"
+html_theme_options = {
+    'style_external_links': True
+}
 
 html_static_path = ["_static"]
 html_css_files = [

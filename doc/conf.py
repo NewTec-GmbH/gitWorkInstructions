@@ -6,6 +6,9 @@
 
 import os.path
 import platform
+import subprocess
+git_version = subprocess.check_output(
+    ['git', 'describe', 'HEAD', '--tags', '--always'])
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -13,19 +16,20 @@ import platform
 project = "gitWorkInstructions"
 copyright = "2024 - present, NewTec GmbH"
 author = "NewTec GmbH"
-release = "1.1.0"
+release = git_version.decode()
+version = release  # Do not differenciate between release and version
 conf_py_path = "/doc/"  # with leading and trailing slashes
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    "sphinxcontrib.mermaid",  # Mermaid diagrams
-    "sphinxcontrib.plantuml", # Plantuml diagrams
-    "myst_parser",            # MyST markdown parser
-    "sphinx_rtd_dark_mode",   # Dark mode
-    "sphinx_copybutton",      # Copy button
-    "sphinx_togglebutton"     # Toggle button
+    "sphinxcontrib.mermaid",   # Mermaid diagrams
+    "sphinxcontrib.plantuml",  # Plantuml diagrams
+    "myst_parser",             # MyST markdown parser
+    "sphinx_rtd_dark_mode",    # Dark mode
+    "sphinx_copybutton",       # Copy button
+    "sphinx_togglebutton"      # Toggle button
 ]
 
 templates_path = ["_templates"]
@@ -41,6 +45,9 @@ exclude_patterns = [
 # HTML theme and static files
 html_theme = "sphinx_rtd_theme"
 html_last_updated_fmt = "%b %d, %Y"
+html_theme_options = {
+    'style_external_links': True
+}
 
 html_static_path = ["_static"]
 html_css_files = [

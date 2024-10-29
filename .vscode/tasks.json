@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Python Requirements",
+            "label": "Install Python Requirements",
             "type": "shell",
             "command": [
                 "pip",
@@ -13,19 +13,19 @@
                 "requirements.txt"
             ],
             "group": {
-                "kind": "requirements"
+                "kind": "none"
             },
             "problemMatcher": []
         },
         {
-            "label": "NPM Requirements",
+            "label": "Install NPM Requirements",
             "type": "shell",
             "command": [
                 "npm",
                 "install"
             ],
             "group": {
-                "kind": "requirements"
+                "kind": "none"
             },
             "problemMatcher": []
         },
@@ -34,11 +34,11 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "Python Requirements",
-                "NPM Requirements"
+                "Install Python Requirements",
+                "Install NPM Requirements"
             ],
             "group": {
-                "kind": "requirements"
+                "kind": "none"
             },
             "problemMatcher": []
         },
@@ -71,7 +71,7 @@
                 "_build"
             ],
             "problemMatcher": []
-        }
+        },
         {
             "label": "Build and open",
             "type": "shell",

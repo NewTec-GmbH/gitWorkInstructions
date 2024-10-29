@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Branches &mdash; gitWorkInstructions v1.1.1
+ documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/svg.css?v=d3ae3b80" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/width.css?v=a0fc712e" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=a34f1657"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script>let toggleHintShow = '';</script>
+        <script>let toggleHintHide = '';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+        <script src="../_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pull Requests" href="pull_request.html" />
+    <link rel="prev" title="Templates" href="../git/templates.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            gitWorkInstructions
+          </a>
+              <div class="version">
+                v1.1.1
+
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Git:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../git/git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/github.html">Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/templates.html">Templates</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Branches:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Branches</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main-branch">Main branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-branches">Release branches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ready-for-release">Ready for release</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#feature-branches">Feature branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bugfix-branches">Bugfix branches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pull_request.html">Pull Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CI/CD:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ci/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ci/cd.html">Continous Deployment</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Submodule Config Management:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../versioning/submod_versioning.html">Software Configuration Management with Git Submodules</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gitWorkInstructions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Branches</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/branches/branch_types.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="branches">
+<h1>Branches<a class="headerlink" href="#branches" title="Link to this heading"></a></h1>
+<p>This page will introduce the naming conventions for the different types of branches and highlight their specific use cases.</p>
+<section id="main-branch">
+<h2>Main branch<a class="headerlink" href="#main-branch" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is the singular and first branch existing on a new repository.
+It is used to represent the current state of the project, therefore it is most important to keep it in a stable state.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Direct work on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is forbidden!</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is used to track the latest release version of the project. A release is a traceable version of the project, and therefore the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch can be seen as an overview of the different releases, as seen below:</p>
+<object data="../_images/mermaid-866872f0f3fc6553f62c74ae7e1dd56d71762a47.svg" type="image/svg+xml">
+            <p class="warning">%%{init: { 'gitGraph': {'showCommitLabel': false}} }%%
+gitGraph
+   commit
+   commit tag: &quot;v1.0.0&quot;
+   commit tag: &quot;v2.0.0&quot;
+   commit tag: &quot;v2.2.0&quot;
+   commit tag: &quot;v3.0.0&quot;</p></object>
+<p>Note that the commits in the figure above are the result of merge operations from <a class="reference internal" href="#release-branches">release branches</a>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>We use <a class="reference external" href="https://docs.npmjs.com/about-semantic-versioning">Semantic Versioning</a> to determine the version number of each release.</p>
+</div>
+</section>
+<section id="release-branches">
+<h2>Release branches<a class="headerlink" href="#release-branches" title="Link to this heading"></a></h2>
+<p>Release branches serve as a staging area for the integration of new features and fixes.</p>
+<p>A release branch has the prefix <code class="docutils literal notranslate"><span class="pre">release/</span></code> followed by the <strong>future</strong> release version that will be published to main when the work on all features has been completed excluding the patch version: <code class="docutils literal notranslate"><span class="pre">release/v&lt;major&gt;.&lt;minor&gt;.x</span></code>. For example, the branch <code class="docutils literal notranslate"><span class="pre">release/v2.0.x</span></code> contains all the patches belonging to major version 2 and minor version 0.</p>
+<p>While the state of the software on a release branch does not necessarily have to be stable, they are not intended to be worked on directly. For this reason, <a class="reference internal" href="#feature-branches">feature</a> and <a class="reference internal" href="#bugfix-branches">bugfix</a> branches are introduced.</p>
+<section id="ready-for-release">
+<h3>Ready for release<a class="headerlink" href="#ready-for-release" title="Link to this heading"></a></h3>
+<p>Once all the features planned for the release have been implemented and the release branch is ready, a <a class="reference internal" href="pull_request.html"><span class="std std-doc">Pull Request (PR)</span></a> can be started to merge it into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A <a class="reference internal" href="pull_request.html"><span class="std std-doc">Pull Request (PR)</span></a> <strong>must</strong> be performed to merge a <code class="docutils literal notranslate"><span class="pre">release</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+</div>
+<object data="../_images/mermaid-47d0a4e7754e5c5e1ddae45e4a8d83dad585d5e7.svg" type="image/svg+xml">
+            <p class="warning">%%{init: { 'gitGraph': {'showCommitLabel': false}} }%%
+gitGraph
+   commit
+   commit tag: &quot;v1.0.0&quot;
+   branch release/v2.0.x
+   commit
+   commit
+   commit
+   checkout main
+   merge release/v2.0.x tag: &quot;v2.0.0&quot;</p></object>
+<p>In an ideal world, the work on release v3.0.0 can begin after release v2.0.0 is completed and the new tag can be used as a branching point for the next release branch. In practice, shifting priorities and complexities will result in the need for parallel release branches as shown below.</p>
+<object data="../_images/mermaid-1d877453515334ede2395be930ab3f7587ec7cdb.svg" type="image/svg+xml">
+            <p class="warning">%%{init: { 'gitGraph': {'showCommitLabel': false}} }%%
+gitGraph
+   commit
+   commit tag: &quot;v1.0.0&quot;
+   branch release/v2.0.x
+   commit
+   commit
+   branch release/v3.0.x
+   commit
+   checkout release/v2.0.x
+   commit
+   checkout main
+   merge release/v2.0.x tag: &quot;v2.0.0&quot;
+   checkout release/v3.0.x
+   merge release/v2.0.x
+   commit
+   commit
+   checkout main
+   merge release/v3.0.x tag: &quot;v3.0.0&quot;</p></object>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do not delete the <code class="docutils literal notranslate"><span class="pre">release/</span></code> branches after these have been merged to <code class="docutils literal notranslate"><span class="pre">main</span></code>!
+You can keep using them for future patches or bugfixes, or as reference for future development.</p>
+</div>
+</section>
+</section>
+<section id="feature-branches">
+<h2>Feature branches<a class="headerlink" href="#feature-branches" title="Link to this heading"></a></h2>
+<p>Feature branches are created to implement or change a distinct feature. There are no special restrictions on feature branches and work can be directly commited to a feature branch.</p>
+<p>Feature branch naming convention is a prefix plus the name of the feature to be worked on, like <code class="docutils literal notranslate"><span class="pre">feature/multiuser_support</span></code> or <code class="docutils literal notranslate"><span class="pre">feature/client_rework</span></code>.</p>
+<object data="../_images/mermaid-6b87f09eccb7e0c89477ee005eaa2b22481fc5e9.svg" type="image/svg+xml">
+            <p class="warning">%%{init: { 'gitGraph': {'showCommitLabel': false}} }%%
+gitGraph
+   commit tag: &quot;v1.0.0&quot;
+   branch release/v2.0.x
+   branch feature/multiuser_support
+   commit
+   checkout release/v2.0.x
+   branch feature/client_rework
+   commit
+   checkout feature/multiuser_support
+   commit
+   checkout feature/client_rework
+   commit
+   checkout release/v2.0.x
+   merge feature/multiuser_support
+   merge feature/client_rework
+   checkout main
+   merge release/v2.0.x tag: &quot;v2.0.0&quot;</p></object>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A <a class="reference internal" href="pull_request.html"><span class="std std-doc">Pull Request (PR)</span></a> <strong>must</strong> be performed to merge a <code class="docutils literal notranslate"><span class="pre">feature</span></code> into a <code class="docutils literal notranslate"><span class="pre">release</span></code>.</p>
+</div>
+</section>
+<section id="bugfix-branches">
+<h2>Bugfix branches<a class="headerlink" href="#bugfix-branches" title="Link to this heading"></a></h2>
+<p>Bugfix branches are indicated by the <code class="docutils literal notranslate"><span class="pre">bugfix/&lt;name&gt;</span></code> naming sheme. They are used to solve identified issues in already existing releases.
+To make these fixes available for already published releases, a special release branch can be created. For example branch <code class="docutils literal notranslate"><span class="pre">release/v4.0.x</span></code> would serve as the way to release bugfix versions of release v4.0.0.
+This allows for a cleaner main branch and the possibility to resolve issues in old releases without affecting the work for future software versions.</p>
+<object data="../_images/mermaid-ce35c5cd564266815dda31d9119a8d807d181e46.svg" type="image/svg+xml">
+            <p class="warning">%%{init: { 'gitGraph': {'showCommitLabel': false}} }%%
+gitGraph
+    commit tag: &quot;v3.0.0&quot;
+    branch release/v4.0.x
+    commit
+    checkout main
+    merge release/v4.0.x tag: &quot;v4.0.0&quot;
+    branch release/v5.0.x
+    commit
+    checkout main
+    checkout release/v4.0.x
+    branch bugfix/error_condition
+    commit
+    commit
+    checkout release/v4.0.x
+    merge bugfix/error_condition
+    checkout main
+    merge release/v4.0.x tag: &quot;v4.0.1&quot;
+    checkout release/v5.0.x
+    commit
+    checkout main
+    merge release/v5.0.x tag: &quot;v5.0.0&quot;</p></object>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A <a class="reference internal" href="pull_request.html"><span class="std std-doc">Pull Request (PR)</span></a> <strong>must</strong> be performed to merge a <code class="docutils literal notranslate"><span class="pre">bugfix</span></code> into a <code class="docutils literal notranslate"><span class="pre">release</span></code>.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../git/templates.html" class="btn btn-neutral float-left" title="Templates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pull_request.html" class="btn btn-neutral float-right" title="Pull Requests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 - present, NewTec GmbH.
+      <span class="lastupdated">Last updated on Oct 29, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

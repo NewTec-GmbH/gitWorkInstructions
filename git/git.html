@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git &mdash; gitWorkInstructions v1.1.1
+ documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/svg.css?v=d3ae3b80" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/width.css?v=a0fc712e" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=a34f1657"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script>let toggleHintShow = '';</script>
+        <script>let toggleHintHide = '';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="../_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Github" href="github.html" />
+    <link rel="prev" title="NewTec Git Work Instructions" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            gitWorkInstructions
+          </a>
+              <div class="version">
+                v1.1.1
+
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Git:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-git">What is Git?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-and-configuration">Installation and Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installer">Installer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#existing-installation">Existing installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-git">Using Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ignore-files">Ignore Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#line-endings">Line Endings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integrations">Integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#faq">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templates.html">Templates</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Branches:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../branches/branch_types.html">Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/pull_request.html">Pull Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CI/CD:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ci/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ci/cd.html">Continous Deployment</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Submodule Config Management:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../versioning/submod_versioning.html">Software Configuration Management with Git Submodules</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gitWorkInstructions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Git</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/git/git.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="git">
+<h1>Git<a class="headerlink" href="#git" title="Link to this heading"></a></h1>
+<section id="what-is-git">
+<h2>What is Git?<a class="headerlink" href="#what-is-git" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://git-scm.com/">Git</a> is a Version Control System (VCS) used in a huge amount of projects, not only open-source but also private and in the industry. It works by creating “snapshots” of your files, so you can share them with others or come back to an old version if something is not working right. It allows efficient cooperative work and a traceable lifecycle for software projects, which is a great advantage for developers.</p>
+</section>
+<section id="installation-and-configuration">
+<h2>Installation and Configuration<a class="headerlink" href="#installation-and-configuration" title="Link to this heading"></a></h2>
+<section id="installer">
+<h3>Installer<a class="headerlink" href="#installer" title="Link to this heading"></a></h3>
+<p>In order to install Git in your computer, head to the <a class="reference external" href="https://git-scm.com/download/win">download page</a> and choose the correct version for your operating system. In this document we assume that you are using Windows.</p>
+<p>Once you open the installer, you will go through a number of configuration screens. Below you can find the common configuration options that we use.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there is a screen or setting you cannot find, please contact your supervisor as the documentation may be out-of-date.</p>
+<p><strong>Current Git Release</strong>: v2.45.2</p>
+</div>
+<ul class="simple">
+<li><p>Select Components:</p>
+<ul>
+<li><p><strong>Choose</strong>: Windows Explorer integration</p></li>
+<li><p><strong>Choose</strong>: Associate .git* configuration files with the default text editor</p></li>
+<li><p><strong>Choose</strong>: Any other setting of your preference. LFS is not necessary.</p></li>
+</ul>
+</li>
+<li><p>Choosing the default editor used by Git</p>
+<ul>
+<li><p><strong>Choose</strong>: Use the editor of your preference. We use Visual Studio Code, or Notepad in case VSCode is not installed.</p></li>
+</ul>
+</li>
+<li><p>Adjusting the name of the initial branch in new repositories</p>
+<ul>
+<li><p><strong>Choose</strong>: Override the default branch name. Use <code class="docutils literal notranslate"><span class="pre">main</span></code></p></li>
+</ul>
+</li>
+<li><p>Adjusting your PATH environment</p>
+<ul>
+<li><p><strong>Choose</strong>: Git from the command line and also from 3rd-party software</p></li>
+</ul>
+</li>
+<li><p>Choosing the SSH executable:</p>
+<ul>
+<li><p><strong>Choose</strong>: Use bundled OpenSSH</p></li>
+</ul>
+</li>
+<li><p>Choosing HTTPS transport backend</p>
+<ul>
+<li><p><strong>Choose</strong>: Use the OpenSSL library</p></li>
+</ul>
+</li>
+<li><p>Configuring the line ending conversions:</p>
+<ul>
+<li><p><strong>Choose</strong>: Checkout as-is, commit as-is</p></li>
+</ul>
+</li>
+<li><p>Configuring the terminal emulator to use with Git Bash:</p>
+<ul>
+<li><p><strong>Choose</strong>: Use MinTTY</p></li>
+</ul>
+</li>
+<li><p>Choose the default behavior of “git pull”</p>
+<ul>
+<li><p><strong>Choose</strong>: Fast-forward or merge</p></li>
+</ul>
+</li>
+<li><p>Choose a credential helper:</p>
+<ul>
+<li><p><strong>Choose</strong>: Git Credential Manager</p></li>
+</ul>
+</li>
+<li><p>Configuring extra options</p>
+<ul>
+<li><p><strong>Select</strong>: Enable file system caching</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="existing-installation">
+<h3>Existing installation<a class="headerlink" href="#existing-installation" title="Link to this heading"></a></h3>
+<p>In case you already have Git installed in your machine, make sure the following configurations are set in your <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> file:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[core]</span>
+<span class="w"> </span><span class="na">eol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crlf</span>
+<span class="w"> </span><span class="na">autocrlf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
+<span class="w"> </span><span class="na">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">code --wait</span>
+
+<span class="k">[user]</span>
+<span class="w"> </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;your-name&gt;</span>
+<span class="w"> </span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;your-NewTec-email&gt;</span>
+
+<span class="k">[init]</span>
+<span class="w"> </span><span class="na">defaultBranch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">main</span>
+</pre></div>
+</div>
+<p>You can write these manually, or set them using the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.eol<span class="w"> </span>crlf
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.autocrlf<span class="w"> </span><span class="nb">false</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">&quot;code --wait&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span>&lt;your-name&gt;
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>&lt;your-NewTec-email&gt;
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>main
+</pre></div>
+</div>
+</section>
+</section>
+<section id="using-git">
+<h2>Using Git<a class="headerlink" href="#using-git" title="Link to this heading"></a></h2>
+<p>To learn more about using Git, you can visit this <a class="reference external" href="https://learngitbranching.js.org/">cool website</a>.</p>
+</section>
+<section id="ignore-files">
+<h2>Ignore Files<a class="headerlink" href="#ignore-files" title="Link to this heading"></a></h2>
+<p>You do not always want to commit everything on your folder, for example, lots of automatically-generated documentation.
+This is where the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file comes into play.</p>
+<p><a class="reference external" href="https://github.com/NewTec-GmbH/template_python/blob/main/.gitignore">Here</a> is an example of how a common ignore file looks like for a Python project. You can add or remove lines depending on your use case but you generally want to ignore any file or folder that can be generated.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Never commit sensitive data, API keys, credentials, or similar data!</p>
+</div>
+</section>
+<section id="line-endings">
+<h2>Line Endings<a class="headerlink" href="#line-endings" title="Link to this heading"></a></h2>
+<p>Line endings are invisible characters that are present on every file and determine how this is to be interpreted by your computer. For Linux machines, the line ending is <code class="docutils literal notranslate"><span class="pre">LF</span></code>, while for Windows it is <code class="docutils literal notranslate"><span class="pre">CRLF</span></code>. Given that we usually work with Windows, the default for all text-based files should always be <code class="docutils literal notranslate"><span class="pre">CRLF</span></code>.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>An exception is made by generated files from tools such as Doxygen, which are usually <code class="docutils literal notranslate"><span class="pre">LF</span></code> and should remain this way.</p>
+</div>
+<p>In order to standarize which files have which ending, a <code class="docutils literal notranslate"><span class="pre">.gitattributes</span></code> file should be present in your repository. <a class="reference external" href="https://github.com/NewTec-GmbH/template_python/blob/main/.gitattributes">Here</a> is an example of how a common attributes file looks like for a Python project. You can add or remove lines depending on your use case.</p>
+</section>
+<section id="integrations">
+<h2>Integrations<a class="headerlink" href="#integrations" title="Link to this heading"></a></h2>
+<p>Integrations with 3rd-party tools may simplify the way you interact with Git, either by providing a GUI or by showing more information on your current work.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>These are tools that may help you, but are not necessary to use Git.</p>
+</div>
+<ul class="simple">
+<li><p>Visual Studio Code:</p>
+<ul>
+<li><p>Integrated “Source Control” (<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">G</span></code>) : Tracks your changes, branches, and provides a text field for easy commits.</p></li>
+<li><p>Extension “Git Graph”: Visualize your branches and commits.</p></li>
+</ul>
+</li>
+<li><p>TortoiseGit</p>
+<ul>
+<li><p>Similar to TortoiseSVN.</p></li>
+<li><p>Provides a simple GUI to manage your local repository without using the commmand line.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>These are just tools! You must still understand what you are doing!</p>
+</div>
+</section>
+<section id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Link to this heading"></a></h2>
+<div class="dropdown admonition">
+<p class="admonition-title">Git configuration not found on <code class="docutils literal notranslate"><span class="pre">G:/</span></code> drive.</p>
+<p>On a fresh PC installation, and after following all installation steps for Git, commands may fail with an error related to the <code class="docutils literal notranslate"><span class="pre">G:/</span></code> drive.
+This is due to the configuration being present in the <code class="docutils literal notranslate"><span class="pre">C:/</span></code> drive instead.</p>
+<p>To fix this, add the following environment variable:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HOME</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;your-user&gt;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="NewTec Git Work Instructions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="github.html" class="btn btn-neutral float-right" title="Github" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 - present, NewTec GmbH.
+      <span class="lastupdated">Last updated on Oct 29, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

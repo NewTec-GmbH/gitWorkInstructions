@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewTec Git Work Instructions &mdash; gitWorkInstructions v1.1.1
+ documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="_static/css/svg.css?v=d3ae3b80" />
+      <link rel="stylesheet" type="text/css" href="_static/css/width.css?v=a0fc712e" />
+      <link rel="stylesheet" type="text/css" href="_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=a34f1657"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+        <script>let toggleHintShow = '';</script>
+        <script>let toggleHintHide = '';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+        <script src="_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+        <script src="_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Git" href="git/git.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            gitWorkInstructions
+          </a>
+              <div class="version">
+                v1.1.1
+
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Git:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="git/git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git/github.html">Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git/templates.html">Templates</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Branches:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="branches/branch_types.html">Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branches/pull_request.html">Pull Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CI/CD:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ci/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci/cd.html">Continous Deployment</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Submodule Config Management:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="versioning/submod_versioning.html">Software Configuration Management with Git Submodules</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">gitWorkInstructions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">NewTec Git Work Instructions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="newtec-git-work-instructions">
+<h1>NewTec Git Work Instructions<a class="headerlink" href="#newtec-git-work-instructions" title="Link to this heading"></a></h1>
+<p>Git is not restrictive on how the project structure shall look like, or how each repository shall be configured, making it the responsibility of users that work together to agree on the conventions and structures to be used. Depending on the project complexity and team size, different rulesets ensure either light overhead and flexibility or a tight harness around each developer.</p>
+<p>This documentation is intended to introduce the overall branching strategy to be used in all NewTec projects, specifically those hosted in <a class="reference external" href="https://github.com/NewTec-GmbH">GitHub</a>. It will serve as a starting point for new project members to get up to speed with the existing workflow and a reference manual for developers.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Git:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="git/git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git/git.html#what-is-git">What is Git?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/git.html#installation-and-configuration">Installation and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/git.html#using-git">Using Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/git.html#ignore-files">Ignore Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/git.html#line-endings">Line Endings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/git.html#integrations">Integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/git.html#faq">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git/github.html">Github</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git/github.html#user-profile">User Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/github.html#ssh-keys">SSH Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git/templates.html">Templates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git/templates.html#python">Python</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Branches:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="branches/branch_types.html">Branches</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="branches/branch_types.html#main-branch">Main branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branches/branch_types.html#release-branches">Release branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branches/branch_types.html#feature-branches">Feature branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branches/branch_types.html#bugfix-branches">Bugfix branches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="branches/pull_request.html">Pull Requests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="branches/pull_request.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branches/pull_request.html#anatomy-of-a-pull-request">Anatomy of a Pull Request</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">CI/CD:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ci/ci.html">Continuous Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ci/ci.html#github-actions">Github Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ci/cd.html">Continous Deployment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ci/cd.html#github-actions">Github Actions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<object data="_images/mermaid-5b874c19e9f5e363c346fb831ec436e60835bfb6.svg" type="image/svg+xml">
+            <p class="warning">%%{init: { 'gitGraph': {'showCommitLabel': false}} }%%
+gitGraph
+   commit tag: &quot;v1.0.0&quot;
+   branch release/v2.0.x
+   branch feature/UI
+   commit
+   checkout release/v2.0.x
+   branch feature/AJAX
+   commit
+   checkout release/v2.0.x
+   merge feature/AJAX
+   checkout feature/UI
+   commit
+   checkout release/v2.0.x
+   merge feature/UI
+   checkout main
+   merge release/v2.0.x tag: &quot;v2.0.0&quot;
+   branch release/v3.0.x
+   branch feature/DB
+   commit
+   checkout release/v3.0.x
+   merge feature/DB
+   checkout main
+   checkout release/v2.0.x
+   branch bugfix/Button
+   commit
+   checkout release/v2.0.x
+   merge bugfix/Button tag: &quot;v2.0.1&quot;
+   checkout release/v3.0.x
+   branch feature/UI_rework
+   commit
+   checkout release/v3.0.x
+   merge feature/UI_rework
+   merge bugfix/Button
+   checkout main
+   merge release/v3.0.x tag: &quot;v3.0.0&quot;</p></object>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Submodule Config Management:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="versioning/submod_versioning.html">Software Configuration Management with Git Submodules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="versioning/submod_versioning.html#abstract">Abstract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versioning/submod_versioning.html#used-terminology">Used Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versioning/submod_versioning.html#git-submodules">Git Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versioning/submod_versioning.html#versioning-of-submodules-via-branches">Versioning of Submodules via Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versioning/submod_versioning.html#git-commands-for-different-use-cases">Git Commands for Different Use Cases</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="git/git.html" class="btn btn-neutral float-right" title="Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 - present, NewTec GmbH.
+      <span class="lastupdated">Last updated on Oct 29, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

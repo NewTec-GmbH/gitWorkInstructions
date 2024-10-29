@@ -34,8 +34,8 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "Python Requirements",
-                "NPM Requirements"
+                "Install Python Requirements",
+                "Install NPM Requirements"
             ],
             "group": {
                 "kind": "none"

@@ -118,6 +118,36 @@ gitGraph
 A [Pull Request (PR)](./pull_request.md) **must** be performed to merge a `feature` into a `release`.
 :::
 
+## Detailed Design branches
+
+When using markdown to create a detailed design in projects that require design approvals, the workflow as shown below shall be followed before starting the implementation in feature branches.
+
+```{mermaid}
+%%{init: { 'gitGraph': {'showCommitLabel': true}} }%%
+gitGraph
+   commit tag: "v1.0.0"
+   branch release/v2.0.x
+   branch feature/multiuser_support
+   commit
+   commit
+   branch feature/SDD/multiuser_support
+   commit
+   checkout feature/SDD/multiuser_support
+   commit
+   checkout feature/multiuser_support
+   merge feature/SDD/multiuser_support
+   commit
+   commit
+   checkout release/v2.0.x
+   merge feature/multiuser_support
+   checkout main
+   merge release/v2.0.x tag: "v2.0.0"
+```
+
+:::{warning}
+A [Pull Request (PR)](./pull_request.md) **must** be performed to merge a `feature` into a `release`. This ensures the proper documentation as previously mentioned.
+:::
+
 ## Bugfix branches
 
 Bugfix branches are indicated by the `bugfix/<name>` naming sheme. They are used to solve identified issues in already existing releases.

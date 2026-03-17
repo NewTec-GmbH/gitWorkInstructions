@@ -109,7 +109,7 @@ In order to standardize which files have which ending in Git, Git uses sophistic
 
 The `.gitattributes` file works by matching file patterns (similar to `.gitignore`) and assigning attributes to them. For example, you can enforce consistent line endings across different operating systems:
 
-```
+```text
 * text=auto
 ```
 
@@ -117,7 +117,7 @@ This tells Git to automatically detect text files and normalize their line endin
 
 You can also define more specific rules:
 
-```
+```text
 *.sh text eol=lf
 *.bat text eol=crlf
 ```
@@ -162,7 +162,7 @@ These are tools that may help you, but are not necessary to use Git.
   - Extension "Git Graph": Visualize your branches and commits.
 - TortoiseGit
   - Similar to TortoiseSVN.
-  - Provides a simple GUI to manage your local repository without using the commmand line.
+  - Provides a simple GUI to manage your local repository without using the command line.
 
 :::{attention}
 These are just tools! You must still understand what you are doing!

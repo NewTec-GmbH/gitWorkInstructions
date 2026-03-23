@@ -130,8 +130,8 @@ This ensures that files behave correctly regardless of the developer’s operati
 In addition to `.gitattributes`, Git uses configuration settings such as `core.autocrlf` and `core.eol`:
 
 - `core.autocrlf` controls whether Git automatically converts line endings during check-in and check-out:
-  - `true`: converts LF ↔ CRLF (common on Windows)
-  - `input`: converts CRLF → LF on commit only (common on Linux/macOS)
+  - `true`: converts between LF and CRLF (common on Windows)
+  - `input`: converts CRLF to LF on commit only (common on Linux/macOS)
   - `false`: no automatic conversion
 
 - `core.eol` defines which line ending Git should use in the working directory when it performs conversions:

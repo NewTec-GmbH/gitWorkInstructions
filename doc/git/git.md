@@ -8,14 +8,14 @@
 
 ### Installer
 
-In order to install Git in your computer, head to the [download page](https://git-scm.com/download/win) and choose the correct version for your operating system. In this document we assume that you are using Windows.
+In order to install Git on your computer, head to the [download page](https://git-scm.com/download/win) and choose the correct version for your operating system. In this document we assume that you are using Windows.
 
 Once you open the installer, you will go through a number of configuration screens. Below you can find the common configuration options that we use.
 
 ```{note}
 If there is a screen or setting you cannot find, please contact your supervisor as the documentation may be out-of-date.
 
-**Current Git Release**: v2.45.2
+**Current Git Release**: v2.53.0
 ```
 
 - Select Components:
@@ -99,13 +99,55 @@ Never commit sensitive data, API keys, credentials, or similar data!
 
 ## Line Endings
 
-Line endings are invisible characters that are present on every file and determine how this is to be interpreted by your computer. For Linux machines, the line ending is `LF`, while for Windows it is `CRLF`. Given that we usually work with Windows, the default for all text-based files should always be `CRLF`.
+Line endings are invisible characters that are present on every file and determine how software reads and displays the file on your computer. For Linux machines (or WSL), the line ending is `LF`, while for Windows it is `CRLF`. Given that we usually work on Windows, the default for all text-based files is `CRLF`.
 
 :::{attention}
-An exception is made by generated files from tools such as Doxygen, which are usually `LF` and should remain this way.
+An exception is made for generated files from tools which are using `LF` on both Windows and Linux, such as Doxygen, and hence should remain this way.
 :::
 
-In order to standarize which files have which ending, a `.gitattributes` file should be present in your repository. [Here](https://github.com/NewTec-GmbH/template_python/blob/main/.gitattributes) is an example of how a common attributes file looks like for a Python project. You can add or remove lines depending on your use case.
+In order to standardize which files have which ending in Git, Git uses sophisticated methods. The most important is the `.gitattributes` config file, which allows to define rules for how files should be treated when they are checked in and checked out.
+
+The `.gitattributes` file works by matching file patterns (similar to `.gitignore`) and assigning attributes to them. For example, you can enforce consistent line endings across different operating systems:
+
+```text
+* text=auto
+```
+
+This tells Git to automatically detect text files and normalize their line endings to LF in the repository, while converting them to the appropriate format (e.g., CRLF on Windows) in the working directory.
+
+You can also define more specific rules:
+
+```text
+*.sh text eol=lf
+*.bat text eol=crlf
+```
+
+- Linux shell script files (`*.sh`) will always use LF line endings
+- Batch files (`*.bat`) will always use CRLF line endings
+
+This ensures that files behave correctly regardless of the developer’s operating system.
+
+In addition to `.gitattributes`, Git uses configuration settings such as `core.autocrlf` and `core.eol`:
+
+- `core.autocrlf` controls whether Git automatically converts line endings during check-in and check-out:
+  - `true`: converts between LF and CRLF (common on Windows)
+  - `input`: converts CRLF to LF on commit only (common on Linux/macOS)
+  - `false`: no automatic conversion
+
+- `core.eol` defines which line ending Git should use in the working directory when it performs conversions:
+  - `lf`: use LF
+  - `crlf`: use CRLF
+  - `native`: use the platform default
+
+It’s important to understand how these interact:
+
+- `.gitattributes` overrides `core.autocrlf` and `core.eol` for matching files
+- `core.autocrlf` and `core.eol` act as fallback/default behavior when no explicit rule is defined
+- The repository itself typically stores normalized LF line endings when text attributes are used
+
+For team projects, `.gitattributes` is generally preferred because it enforces consistent behavior across all contributors, regardless of their individual Git configuration.
+
+[Here](https://github.com/NewTec-GmbH/template_python/blob/main/.gitattributes) is an example of how a common attributes file looks like for a Python project. You can add or remove lines depending on your use case.
 
 ## Integrations
 
@@ -120,7 +162,7 @@ These are tools that may help you, but are not necessary to use Git.
   - Extension "Git Graph": Visualize your branches and commits.
 - TortoiseGit
   - Similar to TortoiseSVN.
-  - Provides a simple GUI to manage your local repository without using the commmand line.
+  - Provides a simple GUI to manage your local repository without using the command line.
 
 :::{attention}
 These are just tools! You must still understand what you are doing!
@@ -138,7 +180,7 @@ This is due to the configuration being present in the `C:/` drive instead.
 To fix this, add the following environment variable:
 
 | Key  | Value                  |
-| ---  | ---                    |
+| ---- | ---------------------- |
 | HOME | `C:\Users\<your-user>` |
 
 :::

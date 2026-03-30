@@ -7,6 +7,13 @@
 import os.path
 import platform
 import subprocess
+
+import os
+
+from typing import Any
+from urllib.parse import urlparse
+from sphinx.errors import ConfigError
+
 git_version = subprocess.check_output(
     ['git', 'describe', 'HEAD', '--tags', '--always'])
 
@@ -24,12 +31,19 @@ conf_py_path = "/doc/"  # with leading and trailing slashes
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    # https://sphinxthemes.com/extensions/sphinxcontrib-mermaid
     "sphinxcontrib.mermaid",   # Mermaid diagrams
+    # https://github.com/sphinx-contrib/plantuml
     "sphinxcontrib.plantuml",  # Plantuml diagrams
-    "myst_parser",             # MyST markdown parser
-    "sphinx_rtd_dark_mode",    # Dark mode
+    # https://sphinxthemes.com/extensions/sphinx-copybutton
     "sphinx_copybutton",       # Copy button
-    "sphinx_togglebutton"      # Toggle button
+    # https://sphinx-togglebutton.readthedocs.io/en/latest/
+    "sphinx_togglebutton",     # Toggle button
+    # https://www.sphinx-doc.org/en/master/usage/markdown.html
+    'myst_parser',             # MyST markdown parser
+    # Extension for the Read the Docs theme, which provides a modern and responsive design for documentation. 
+    # https://sphinx-rtd-theme.readthedocs.io/en/stable/
+    'sphinx_rtd_theme',        # Read the Docs theme
 ]
 
 templates_path = ["_templates"]
@@ -44,19 +58,23 @@ exclude_patterns = [
 
 # HTML theme and static files
 html_theme = "sphinx_rtd_theme"
-html_last_updated_fmt = "%b %d, %Y"
-html_theme_options = {
-    'style_external_links': True
+html_theme_options = {   
+    'style_nav_header_background': '#0C2C40',   # Set the navigation header background color to NewTec black  #0C2C40
 }
 
-html_static_path = ["_static"]
-html_css_files = [
-    "css/svg.css",
-    "css/width.css"
-]
+html_last_updated_fmt = "%b %d, %Y"
 
-# HTML dark theme options
-default_dark_mode = True
+# Copy favorite icon to static path.
+html_favicon = '../doc/images/favicon.ico'
+
+# Copy logo to static path.
+html_logo = '../doc/images/NewTec_Logo.png'
+
+html_static_path = ["_static"]
+#html_js_files = ['version_selector.js']
+html_css_files = [
+    "custom.css"
+]
 
 # Mermaid configuration
 mermaid_output_format = "svg"

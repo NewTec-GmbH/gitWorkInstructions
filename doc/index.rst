@@ -1,11 +1,18 @@
-NewTec Git Work Instructions
+.. figure:: images/NewTec_Logo_Slogan.png
+   :align: right
+   :figwidth: 400px
+
+Git Work Instructions
 =====================================
 
 Git is not restrictive on how the project structure shall look like, or how each repository shall be configured, making it the responsibility of users that work together to agree on the conventions and structures to be used. Depending on the project complexity and team size, different rulesets ensure either light overhead and flexibility or a tight harness around each developer.
 
 This documentation is intended to introduce the overall branching strategy to be used in all NewTec projects, specifically those hosted in `GitHub <https://github.com/NewTec-GmbH>`_. It will serve as a starting point for new project members to get up to speed with the existing workflow and a reference manual for developers.
 
-
+.. figure:: images/Gitterkugel_grau.png
+   :align: right
+   :figwidth: 250px
+   
 .. toctree::
    :caption: Git:
    :maxdepth: 2
@@ -13,7 +20,6 @@ This documentation is intended to introduce the overall branching strategy to be
    git/git.md
    git/github.md
    git/templates.md
-
 
 .. toctree::
    :caption: Branches:

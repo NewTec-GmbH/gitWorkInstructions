@@ -1,4 +1,3 @@
-# pylint: disable=all
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -7,21 +6,15 @@
 import os.path
 import platform
 import subprocess
-
 import os
-
-from typing import Any
-from urllib.parse import urlparse
-from sphinx.errors import ConfigError
 
 git_version = subprocess.check_output(
     ['git', 'describe', 'HEAD', '--tags', '--always'])
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 project = "gitWorkInstructions"
-copyright = "2024 - present, NewTec GmbH"
+copyright = "2024 - present, NewTec GmbH"  #pylint: disable=redefined-builtin
 author = "NewTec GmbH"
 release = git_version.decode()
 version = release  # Do not differenciate between release and version
@@ -41,7 +34,6 @@ extensions = [
     "sphinx_togglebutton",     # Toggle button
     # https://www.sphinx-doc.org/en/master/usage/markdown.html
     'myst_parser',             # MyST markdown parser
-    # Extension for the Read the Docs theme, which provides a modern and responsive design for documentation. 
     # https://sphinx-rtd-theme.readthedocs.io/en/stable/
     'sphinx_rtd_theme',        # Read the Docs theme
 ]

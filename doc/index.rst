@@ -3,7 +3,7 @@
    :figwidth: 400px
 
 Git Work Instructions
-=====================================
+=====================
 
 Git is not restrictive on how the project structure shall look like, or how each repository shall be configured, making it the responsibility of users that work together to agree on the conventions and structures to be used. Depending on the project complexity and team size, different rulesets ensure either light overhead and flexibility or a tight harness around each developer.
 

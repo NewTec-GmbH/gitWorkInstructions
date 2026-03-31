@@ -1,4 +1,7 @@
-# Configuration file for the Sphinx documentation builder.
+"""Configuration file for the Sphinx documentation builder."""
+# The following pylint checks are disabled because they are relevant
+# for this configuration file:
+# pylint: disable=invalid-name
 #
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
@@ -6,7 +9,6 @@
 import os.path
 import platform
 import subprocess
-import os
 
 git_version = subprocess.check_output(
     ['git', 'describe', 'HEAD', '--tags', '--always'])
@@ -50,8 +52,9 @@ exclude_patterns = [
 
 # HTML theme and static files
 html_theme = "sphinx_rtd_theme"
-html_theme_options = {   
-    'style_nav_header_background': '#0C2C40',   # Set the navigation header background color to NewTec black  #0C2C40
+html_theme_options = {
+    # Set the navigation header background color to NewTec black  #0C2C40
+    'style_nav_header_background': '#0C2C40',   
 }
 
 html_last_updated_fmt = "%b %d, %Y"

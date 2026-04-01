@@ -1,5 +1,7 @@
-# pylint: disable=all
-# Configuration file for the Sphinx documentation builder.
+"""Configuration file for the Sphinx documentation builder."""
+# The following pylint checks are disabled because they are relevant
+# for this configuration file:
+# pylint: disable=invalid-name
 #
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
@@ -7,14 +9,14 @@
 import os.path
 import platform
 import subprocess
+
 git_version = subprocess.check_output(
     ['git', 'describe', 'HEAD', '--tags', '--always'])
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 project = "gitWorkInstructions"
-copyright = "2024 - present, NewTec GmbH"
+copyright = "2024 - present, NewTec GmbH"  #pylint: disable=redefined-builtin
 author = "NewTec GmbH"
 release = git_version.decode()
 version = release  # Do not differenciate between release and version
@@ -24,12 +26,18 @@ conf_py_path = "/doc/"  # with leading and trailing slashes
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    # https://sphinxthemes.com/extensions/sphinxcontrib-mermaid
     "sphinxcontrib.mermaid",   # Mermaid diagrams
+    # https://github.com/sphinx-contrib/plantuml
     "sphinxcontrib.plantuml",  # Plantuml diagrams
-    "myst_parser",             # MyST markdown parser
-    "sphinx_rtd_dark_mode",    # Dark mode
+    # https://sphinxthemes.com/extensions/sphinx-copybutton
     "sphinx_copybutton",       # Copy button
-    "sphinx_togglebutton"      # Toggle button
+    # https://sphinx-togglebutton.readthedocs.io/en/latest/
+    "sphinx_togglebutton",     # Toggle button
+    # https://www.sphinx-doc.org/en/master/usage/markdown.html
+    'myst_parser',             # MyST markdown parser
+    # https://sphinx-rtd-theme.readthedocs.io/en/stable/
+    'sphinx_rtd_theme',        # Read the Docs theme
 ]
 
 templates_path = ["_templates"]
@@ -44,19 +52,24 @@ exclude_patterns = [
 
 # HTML theme and static files
 html_theme = "sphinx_rtd_theme"
-html_last_updated_fmt = "%b %d, %Y"
 html_theme_options = {
-    'style_external_links': True
+    # Set the navigation header background color to NewTec black  #0C2C40
+    'style_nav_header_background': '#0C2C40',   
 }
 
-html_static_path = ["_static"]
-html_css_files = [
-    "css/svg.css",
-    "css/width.css"
-]
+html_last_updated_fmt = "%b %d, %Y"
 
-# HTML dark theme options
-default_dark_mode = True
+# Copy favorite icon to static path.
+html_favicon = '../doc/images/favicon.ico'
+
+# Copy logo to static path.
+html_logo = '../doc/images/NewTec_Logo.png'
+
+html_static_path = ["_static"]
+#html_js_files = ['version_selector.js']
+html_css_files = [
+    "custom.css"
+]
 
 # Mermaid configuration
 mermaid_output_format = "svg"

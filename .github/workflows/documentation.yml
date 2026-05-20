@@ -1,4 +1,4 @@
-name: documentation
+﻿name: documentation
 
 # Controls when the action will run.
 on:
@@ -34,16 +34,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
           cache: pip
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "20"
           cache: npm
